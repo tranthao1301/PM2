@@ -40,17 +40,20 @@ class MedienDetailAnzeigerWerkzeug
         {
 //        	if(medium instanceof CD)
 //        	{
-//        		showText += "CD";
+//        		CD cd = (CD) medium;
+//        		showText += "Spiellaenge: " + cd.getSpiellaenge() + "\nInterpret: " + cd.getInterpret() + "\nKommentar: " + cd.getKommentar();
 //        	}
 //        	else if(medium instanceof DVD)
 //        	{
-//        		showText += "DVD";
+//        		DVD dvd = (DVD) medium;
+//        		showText += "Regisseur: " + dvd.getRegisseur() + "\nKommentar: " + dvd.getKommentar();
 //        	}
 //        	else if(medium instanceof Videospiel)
 //        	{
-//        		showText += "Videospiel";
+//        		Videospiel vs = (Videospiel) medium;
+//        		showText += "System: " + vs.getSystem() + "\nKommentar: " + vs.getKommentar();
 //        	}
-//        	showText += "\n" + medium.getTitel();
+//        	showText = medium.getMedienBezeichnung() + "\n" + medium.getTitel() + "\n" + showText;
         	
         	showText = medium.getFormatiertenString();	
         }

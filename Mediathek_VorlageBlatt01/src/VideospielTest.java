@@ -42,9 +42,9 @@ public class VideospielTest {
 	     */
 	    public void testEquals()
 	    {
-	        assertFalse("Mehrere Exemplare der gleichen CD sind ungleich",
+	        assertFalse("Mehrere Exemplare des gleichen Videospiels sind ungleich",
 	                _vs1.equals(_vs2));
-	        assertTrue("Dasselbe Exemplare der gleichen CD ist gleich",
+	        assertTrue("Dasselbe Exemplare des gleichen Videospiels ist gleich",
 	                _vs1.equals(_vs1));
 	    }
 

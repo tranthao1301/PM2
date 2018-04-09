@@ -10,62 +10,60 @@ import java.util.List;
  * @author SE2-Team, PM2-Team
  * @version SoSe 2018
  */
-class MedienbestandServiceImpl extends AbstractObservableService
-        implements MedienbestandService
+class MedienbestandServiceImpl extends AbstractObservableService implements MedienbestandService
 {
 
-    /**
-     * Eine Liste aller Medien
-     */
-    private List<Medium> _medienbestand;
+	/**
+	 * Eine Liste aller Medien
+	 */
+	private List<Medium> _medienbestand;
 
-    /**
-     * Initialisiert einen neuen Medienbestand.
-     * 
-     * @param medien Der initiale Medienbestand.
-     */
-    public MedienbestandServiceImpl(List<Medium> medien)
-    {
-        _medienbestand = new ArrayList<Medium>(medien);
-    }
+	/**
+	 * Initialisiert einen neuen Medienbestand.
+	 * 
+	 * @param medien
+	 *            Der initiale Medienbestand.
+	 */
+	public MedienbestandServiceImpl(List<Medium> medien)
+	{
+		_medienbestand = new ArrayList<Medium>(medien);
+	}
 
-    @Override
-    public void entferneMedium(Medium medium)
-    {
-    	assert medium != null : "Vorbedingung verletzt: medium != null";
-    	assert enthaeltMedium(medium) : "Vorbedingung verletzt: enthaeltMedium(medium)";
-    	_medienbestand.remove(medium);
+	@Override
+	public void entferneMedium(Medium medium)
+	{
+		assert enthaeltMedium(medium) : "Vorbedingung verletzt: enthaeltMedium(medium)";
+		_medienbestand.remove(medium);
 
-        informiereUeberAenderung();
-    }
+		informiereUeberAenderung();
+	}
 
-    @Override
-    public boolean enthaeltMedium(Medium medium)
-    {
-    	assert medium != null : "Vorbedingung verletzt: medium != null";
-    	return _medienbestand.contains(medium);
-    }
+	@Override
+	public boolean enthaeltMedium(Medium medium)
+	{
+		assert medium != null : "Vorbedingung verletzt: medium != null";
+		return _medienbestand.contains(medium);
+	}
 
-    @Override
-    public void fuegeMediumEin(Medium neuesMedium)
-    {
-    	assert !enthaeltMedium(neuesMedium) : "Vorbedingung verletzt: !enthaeltMedium(neuesMedium)";
-    	assert neuesMedium != null : "Vorbedingung verletzt: neuesMedium != null";
-    	_medienbestand.add(neuesMedium);
+	@Override
+	public void fuegeMediumEin(Medium neuesMedium)
+	{
+		assert !enthaeltMedium(neuesMedium) : "Vorbedingung verletzt: !enthaeltMedium(neuesMedium)";
+		_medienbestand.add(neuesMedium);
 
-        informiereUeberAenderung();
-    }
+		informiereUeberAenderung();
+	}
 
-    @Override
-    public List<Medium> getMedien()
-    {
-        return new ArrayList<Medium>(_medienbestand);
-    }
+	@Override
+	public List<Medium> getMedien()
+	{
+		return new ArrayList<Medium>(_medienbestand);
+	}
 
-    @Override
-    public void medienWurdenGeaendert()
-    {
-        informiereUeberAenderung();
-    }
+	@Override
+	public void medienWurdenGeaendert()
+	{
+		informiereUeberAenderung();
+	}
 
 }

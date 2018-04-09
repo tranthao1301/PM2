@@ -20,7 +20,7 @@ interface MedienbestandService extends ObservableService
      * Entfernt ein Medium aus dem Medienbestand, z.B. wenn es verloren gegangen
      * ist oder so veraltet, dass es von den Mediathek-Kunden nicht mehr
      * nachgefragt wird.
-     * @require medium != null
+     * 
      * @require enthaeltMedium(medium)
      * 
      * @ensure !enthaeltMedium(medium)
@@ -47,7 +47,6 @@ interface MedienbestandService extends ObservableService
      * 
      * @param neuesMedium Ein neues Medium
      * 
-     * @require neuesMedium != null
      * @require !enthaeltMedium(neuesMedium)
      * 
      * @ensure enthaeltMedium(neuesMedium)
@@ -58,6 +57,8 @@ interface MedienbestandService extends ObservableService
      * Liefert alle vorhandenen Medien.
      * 
      * @return Eine Kopie der Liste mit allen vorhandenen Medien.
+     * 
+     * @ensure result != null
      */
     List<Medium> getMedien();
 
