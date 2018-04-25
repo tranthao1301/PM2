@@ -1,0 +1,13 @@
+25.4.2018: Ausleihe
+CD:
+    Titel: Gute Nacht
+    Kommentar: Sechstes Soloalbum
+    Interpret: Kontra K
+    Spiellänge: 56
+am 25.4.2018 verliehen an
+    Kundennummer: 123457
+    Name: Kai Konrad
+    Telefon: unbekannt
+    Anschrift:
+    Kannenweg 23
+    21868 Stade
